@@ -1,3 +1,11 @@
+# Study React
+
+### 참고영상
+https://www.udemy.com/course/react-redux/
+Modern React with Redux [2020 Update] by Stephen Grider
+
+
+## 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
