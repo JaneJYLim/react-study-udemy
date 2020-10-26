@@ -1,23 +1,23 @@
 // Import the React and ReactDOM libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
+import faker from 'faker';
+import CommentDetail from './CommentDetail';
 
 // Create a react component
 const App = () => {
-  const buttonText = { text: 'Click me'};
-  const labelText = 'Enter name:';
   return (
-    <div>
-      <label className="label" htmlFor="name" >
-        { labelText }
-      </label>
-      <input type="text" id="name" />
-      <button style={{ backgroundColor: 'blue', color: 'white' }}>
-        { buttonText.text }
-      </button>
+      <div className="ui container comments">
+        <CommentDetail />
+        <CommentDetail />
+        <CommentDetail />
+        <CommentDetail />
+        <CommentDetail />
     </div>
   );
 };
 
 // Take the react component and show it on the screen
 ReactDOM.render(<App />, document.querySelector("#root"));
+
+//https://semantic-ui.com/
