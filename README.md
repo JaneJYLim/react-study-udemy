@@ -14,5 +14,6 @@ Modern React with Redux [2020 Update] by Stephen Grider
   learn concept of props using how to make card
 
 ### section4
-  learn differences of Functional Components and class Components
-  learn class Components using how to make weatherDisplay
+  learn differences of Functional Components and Class Components
+  refactoring from Functional Components to Class Components
+  learn class Components using how to make weatherDisplay(1)
