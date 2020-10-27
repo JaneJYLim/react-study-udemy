@@ -4,16 +4,35 @@ import ReactDOM from 'react-dom';
 
 // Create a react component
 class App extends React.Component {
-  render() {
+  constructor(props) {
+    super(props);
+    
+    // THIS IS THE ONLY TIME we do direct assignment
+    // to this.state
+    this.state = { 
+      lat: null, 
+      errorMessage: '',
+    };
+    
     window.navigator.geolocation.getCurrentPosition(
-      position => console.log(position),
-      err => console.log(err)
+      position => {
+        // we called setStates!!!!
+        this.setState({ lat: position.coords.latitude });
+      },
+      err => {
+        this.setState({ errorMessage: err.message})
+      }
     );
+  }
 
+  // React says we have to define render!!
+  render() {
     return (
-      <div>
-        Latitude: 
-      </div>
+        <div>
+          Latitude: {this.state.lat}
+          <br />
+          Error: {this.state.errorMessage}  
+        </div>
     );
   }
 }
@@ -22,4 +41,4 @@ class App extends React.Component {
 // Take the react component and show it on the screen
 ReactDOM.render(<App />, document.querySelector("#root"));
 
-//https://semantic-ui.com/
+// https://semantic-ui.com/
