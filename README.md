@@ -20,4 +20,7 @@ Modern React with Redux [2020 Update] by Stephen Grider
 
 ### section5
   1. learn concepts of state, setState using how to make weatherDisplay
-  2. learn class Components using how to make weatherDisplay(1)
+  2. learn class Components using how to make weatherDisplay(2)
+  3. learn conditionally rendering content
+
+### section6
