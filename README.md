@@ -26,4 +26,7 @@ Modern React with Redux [2020 Update] by Stephen Grider
 ### section6
   1. learn Lifecycle method
   2. learn passing state as Props
-  3. 
+  3. learn about defaultProps
+
+### section7
+  1. 
