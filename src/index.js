@@ -1,28 +1,23 @@
 // Import the React and ReactDOM libraries
 import React from 'react';
 import ReactDOM from 'react-dom';
+import SeasonDisplay from './SeasonDisplay';
+import 'semantic-ui-css/semantic.min.css'
 
 // Create a react component
-class App extends React.Component {
-  constructor(props) {
-    super(props);
-    
-    // THIS IS THE ONLY TIME we do direct assignment
-    // to this.state
-    this.state = { 
-      lat: null, 
-      errorMessage: '',
-    };
-    
+class App extends React.Component {  
+  state = { lat: null, errorMessage: ''};
+  
+  componentDidMount() {
     window.navigator.geolocation.getCurrentPosition(
-      position => {
-        // we called setStates!!!!
-        this.setState({ lat: position.coords.latitude });
-      },
-      err => {
-        this.setState({ errorMessage: err.message})
-      }
+      position => this.setState({ lat: position.coords.latitude }),
+      err => this.setState({ errorMessage: err.message})
     );
+  }
+    
+
+  componentDidUpdate() {
+    console.log('My Component was just updated - it rendered')
   }
 
   // React says we have to define render!!
@@ -31,7 +26,7 @@ class App extends React.Component {
         return <div>Error: {this.state.errorMessage}</div>
         }
         if (!this.state.errorMessage && this.state.lat) {
-        return <div>Latitude: {this.state.lat}</div>
+        return <SeasonDisplay lat={this.state.lat} />
         }
 
         return <div>Loading!</div>
